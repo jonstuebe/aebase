@@ -15,6 +15,6 @@
  */
 function add_local_script($title, $file_name, $dependency = array('jquery'), $version = '1.0', $footer = true)
 {
-	wp_register_script($title, get_template_directory().'/assets/js/'.$file_name, $dependency, $version, $footer);
+	wp_register_script($title, get_bloginfo('template_directory').'/assets/js/'.$file_name, $dependency, $version, $footer);
 	wp_enqueue_script($title);
 }
