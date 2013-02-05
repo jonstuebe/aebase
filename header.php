@@ -25,27 +25,25 @@
 
 	?></title>
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if IE]>
+<link href="assets/css/ie.css" media="screen" rel="stylesheet" type="text/css" />
 <![endif]-->
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-<?php if (WP_ENV == 'DEVELOPMENT' || WP_ENV == 'STAGING'): // so that live css works with cssedit ?>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/reset.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/fonts.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_directory' ); ?>/assets/css/global.css" />
-<?php else: ?>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />	
-<?php endif ?>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/screen.css" media="screen" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/print.css" media="print" />
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php
 
 wp_deregister_script('jquery');
-wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', array(), '1.7.1', true);
+wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', array(), '1.8.2', true);
 require( get_template_directory() . '/header/scripts.php' );
 wp_enqueue_script('jquery');
 wp_head();
